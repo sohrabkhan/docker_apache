@@ -1,14 +1,11 @@
 <?php
-ini_set('display_errors',true);
-error_reporting( E_ALL );
-
-echo "--Homepage-";
-echo "<br>";
-
-$host = getenv('MYSQL_PORT_3306_TCP_ADDR');
-$port = getenv('MYSQL_PORT_3306_TCP_PORT');
-
-$link = mysqli_connect($host, 'root', 'sample_password', 'mysql', $port);
+/**
+ * Created by PhpStorm.
+ * User: sohrab
+ * Date: 04/02/16
+ * Time: 14:55
+ */
+$link = mysqli_connect('localhost', 'root', 'sample_password', 'mysql');
 
 if (!$link) {
     echo "Error: Unable to connect to MySQL." . PHP_EOL;
@@ -21,3 +18,4 @@ echo "Success: A proper connection to MySQL was made! The my_db database is grea
 echo "Host information: " . mysqli_get_host_info($link) . PHP_EOL;
 
 mysqli_close($link);
+?>
