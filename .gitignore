@@ -1,1 +1,3 @@
 .idea
+html/vendor
+html/composer.lock

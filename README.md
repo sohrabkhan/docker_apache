@@ -19,3 +19,10 @@ If you change your hosts file and add:
  127.0.0.1 dev.sohrabkhan.com
 
 Then visit http://dev.sohrabkhan.com/about
+
+##Run redis and connect##
+If you want to check a connection to redis. Run the following command:
+ > docker run --name sohrab_redis -d redis
+ 
+then run the apache docker with the followin command:
+ > docker run -d -p 80:80 --link=sohrab_mysql:mysql --link=sohrab_redis:redis -v $PWD/html:/var/www/html sohrabkhan/apache
